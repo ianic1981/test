@@ -1,4 +1,4 @@
 cp index.html ../../Web/golf
-cp -r bower_components ../../Web/golf
-cp -r js ../../Web/golf
-cp -r partials ../../Web/golf
+cp -rf bower_components ../../Web/golf
+cp -rf js ../../Web/golf
+cp -rf partials ../../Web/golf

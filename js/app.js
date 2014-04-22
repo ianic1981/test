@@ -8,14 +8,14 @@ golf.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
       when('/scoreCard', {
-        templateUrl: '/partials/scoreCard.html',
+        templateUrl: 'partials/scoreCard.html',
         controller: 'scoreCardCtrl'
       }).
       when('/register', {
-        templateUrl: '/partials/register.html',
+        templateUrl: 'partials/register.html',
         controller: 'registerCtrl'
       }).
       otherwise({
-        redirectTo: '/golf'
+        redirectTo: '/'
       });
   }]);

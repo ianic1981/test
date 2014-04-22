@@ -23,12 +23,14 @@ golf.controller('homeCtrl', function homeCtrl($scope, $location, $route, $routeP
   
   $scope.login = function() {
     configService.login($scope.userName,$scope.password);
-    //reload();
+    $window.location.href = "/index.html"; 
   }
   
   $scope.logout = function(){
   	configService.logout();
-    //reload();
+    $window.location.href = "/index.html"; 
+    $scope.$apply();
+    return true;
   }
 	/*$scope.$watch('location.path()', function (path) {
 		$scope.statusFilter = (path === '/active') ?
