@@ -16,6 +16,7 @@ golf.service('configService', ['golfLocalStorage',function(golfLocalStorage) {
 	},
     logout : function(){
       golfLocalStorage.put(id,{});
+      return undefined;
     }
   }
 
