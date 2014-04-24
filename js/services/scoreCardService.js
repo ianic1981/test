@@ -1,10 +1,12 @@
 golf.service('scoreCardService', ['golfLocalStorage',function(golfLocalStorage) {
   
   var id = "scoreCard";
+  
+  var currentHole = 1;
 
   return {
-    finish : function(hole1,hole2,hole3,hole4,hole5,hole6,hole7,hole8,hole9,hole10,hole11,hole12,hole13,hole14,hole15,hole16,hole17,hole18) {      
-      var round = {'course':"alsager"  
+    	finish : function(hole1,hole2,hole3,hole4,hole5,hole6,hole7,hole8,hole9,hole10,hole11,hole12,hole13,hole14,hole15,hole16,hole17,hole18) {      
+      		var round = {'course':"alsager",  
                    'hole_1':"sh,sh,pt,pt" ,
                    'hole_2':"sh,sh,pt,pt", 
                    'hole_3':"sh,sh,pt,pt",
@@ -24,10 +26,11 @@ golf.service('scoreCardService', ['golfLocalStorage',function(golfLocalStorage) 
                    'hole_17':"sh,sh,pt,pt",
                    'hole_18':"sh,sh,pt,pt" 
                    };
-      golfLocalStorage.put(id,round);                  
-      return round;
-    },
-    getDistanceToFlag : function(){
-    	return 330;
-    }
+     	 golfLocalStorage.put(id,round);                  
+     		 return round;
+   		 },
+   		 getDistanceToFlag : function(){
+    		return 330;
+  		 }
+  		};
 }]);

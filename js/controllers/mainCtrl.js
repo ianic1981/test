@@ -1,7 +1,7 @@
 /*global todomvc, angular */
 'use strict';
 
-golf.controller('mainCtrl', function homeCtrl($scope, $location, $route, $routeParams, configService, filterFilter) {
+golf.controller('mainCtrl', function mainCtrl($scope, $location, $route, $routeParams, configService, filterFilter) {
 	$scope.user = configService.getUser();
 
 	/*$scope.$watch('todos', function (newValue, oldValue) {

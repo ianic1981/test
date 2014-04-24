@@ -1,3 +1,3 @@
-golf.controller('registerCtrl', function TodoCtrl($scope, $location, golfLocalStorage, filterFilter) { 
+golf.controller('registerCtrl', function registerCtrl($scope,registerService) { 
   $scope.register = registerService.register($scope);
 });

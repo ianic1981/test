@@ -5,4 +5,4 @@ golf.service('registerService', ['golfLocalStorage',function(golfLocalStorage) {
     }
     
   }
-]);
+}]);

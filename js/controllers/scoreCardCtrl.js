@@ -1,4 +1,4 @@
-golf.controller('scoreCardCtrl', function TodoCtrl($scope, $location, golfLocalStorage, scoreCardService, filterFilter) { 
+golf.controller('scoreCardCtrl', function scoreCardCtrl($scope, $location, golfLocalStorage, scoreCardService) { 
   
   $scope.name = "scoreCardCtrl";
   
