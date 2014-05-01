@@ -1,4 +1,34 @@
 <div>
 score card
-  <div ng-click="finish()">finish round</div>
+  <!--<hole currentHole="{{hole}}"></hole>-->
+  <div>
+    <span>hole<span ng-bind="hole"></span></span> 
+    <div class="shot" ng-click="addShot('shot' ,hole)">shot</div>
+    <div class="putt" ng-click="addShot('putt', hole)">putt</div>
+    <div class="penalty" ng-click="addShot('pelalty', hole )">penalty</div>
+  </div>  
+  <form>
+    <input type="hidden" name="round.course" ng-value="user.course"/>
+    <input ng-model="round.hole1.shots" ng-bind="round.hole1.shots"/>
+        <input ng-model="round.hole2.shots" ng-bind="round.hole2.shots"/>
+        <input ng-model="round.hole3.shots" ng-bind="round.hole3.shots"/>
+        <input ng-model="round.hole4.shots" ng-bind="round.hole4.shots"/>
+        <input ng-model="round.hole5.shots" ng-bind="round.hole5.shots"/>
+        <input ng-model="round.hole6.shots" ng-bind="round.hole6.shots"/>
+        <input ng-model="round.hole7.shots" ng-bind="round.hole7.shots"/>
+        <input ng-model="round.hole8.shots" ng-bind="round.hole8.shots"/>
+        <input ng-model="round.hole9.shots" ng-bind="round.hole9.shots"/>
+        <input ng-model="round.hole10.shots" ng-bind="round.hole10.shots"/>
+        <input ng-model="round.hole11.shots" ng-bind="round.hole11.shots"/>
+        <input ng-model="round.hole12.shots" ng-bind="round.hole12.shots"/>
+	    <input ng-model="round.hole13.shots" ng-bind="round.hole13.shots"/>    
+    	<input ng-model="round.hole14.shots" ng-bind="round.hole14.shots"/>
+        <input ng-model="round.hole15.shots" ng-bind="round.hole15.shots"/>
+        <input ng-model="round.hole16.shots" ng-bind="round.hole16.shots"/>
+        <input ng-model="round.hole17.shots" ng-bind="round.hole17.shots"/>
+        <input ng-model="round.hole18.shots" ng-bind="round.hole18.shots"/>
+    <button ng-disable="hole == 18" ng-click="nextHole(round)">next hole</button>
+    <button type="submit" ng-enable="hole == 18" ng-click="finish()">finish round</button>
+  </form>  
+  
 </div>

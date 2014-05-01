@@ -16,12 +16,13 @@
               <span ng-bind="user.name"></span><br/>
               <a href="#scoreCard">Score Card</a>
               <a href="#config">settings</a>
+              <a href="#history">history</a>
               <a _target='_self' ng-click="logout()" href="#">log out</a>          
 			</div>
           	<div id="login" ng-hide="user" ng-cloak>
 				<form ng-submit="login()">
-                  <input name="userName" id="userName"  value=""  placeholder="user name"/>
-                  <input type="password" name="password" id="password"  value=""/>
+                  <input ng-model="userName"  value=""  placeholder="user name"/>
+                  <input type="password" ng-model="password"  value=""/>
                   <input type="submit" value="login"/>
                   <a href="#register">register</a>
               	</form>  
@@ -41,7 +42,8 @@
       	<script src="js/services/configService.js"></script>
 		<script src="js/controllers/scoreCardCtrl.js"></script>
         <script src="js/services/scoreCardService.js"></script>
-      	<script src="js/controllers/registerCtrl.js"></script>
+      	<script src="js/controllers/registerCtrl.js"></script>      	
+      	<script src="js/controllers/historyCtrl.js"></script>
       	<script src="js/services/registerService.js"></script>
       	<script src="js/directives/todoFocus.js"></script>
 		<script src="js/directives/todoEscape.js"></script>

@@ -2,24 +2,20 @@ golf.controller('scoreCardCtrl', function scoreCardCtrl($scope, $location, golfL
   
   $scope.name = "scoreCardCtrl";
   
-  $scope.finish = function(){ scoreCardService.finish(
-    $scope.hole1,
-    $scope.hole2,
-    $scope.hole3,
-    $scope.hole4,
-    $scope.hole5,
-    $scope.hole6,
-    $scope.hole7,
-    $scope.hole8,
-    $scope.hole9,
-    $scope.hole10,
-    $scope.hole11,
-    $scope.hole12,
-    $scope.hole13,
-    $scope.hole14,
-    $scope.hole15,
-    $scope.hole16,
-    $scope.hole17,
-    $scope.hole18);
+  $scope.round = scoreCardService.getCurrentRound();
+  
+  $scope.hole = 1;
+  
+  $scope.nextHole = function(){ 
+     $scope.hole = scoreCardService.getNextHole($scope.round);
+  }
+  
+  $scope.finish = function(){ 
+    scoreCardService.finish($scope.round);
+    $location.path("/");
    }
+  
+  $scope.addShot = function(shot , hole){
+    scoreCardService.addShot(shot,hole);
+  }
 });

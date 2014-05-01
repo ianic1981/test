@@ -15,6 +15,10 @@ golf.config(['$routeProvider',
         templateUrl: 'partials/register.html',
         controller: 'registerCtrl'
       }).
+     when('/history', {
+        templateUrl: 'partials/history.html',
+        controller: 'historyCtrl'
+      }).
       otherwise({
         redirectTo: '/'
       });

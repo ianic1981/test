@@ -3,6 +3,8 @@
 
 golf.controller('mainCtrl', function mainCtrl($scope, $location, $route, $routeParams, configService, filterFilter) {
 	$scope.user = configService.getUser();
+  	$scope.userName = "";
+  	$scope.password = "";
 
 	/*$scope.$watch('todos', function (newValue, oldValue) {
 		$scope.remainingCount = filterFilter(todos, { completed: false }).length;
