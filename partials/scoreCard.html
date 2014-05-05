@@ -9,24 +9,24 @@ score card
   </div>  
   <form>
     <input type="hidden" name="round.course" ng-value="user.course"/>
-    <input ng-model="round.hole1.shots" ng-bind="round.hole1.shots"/>
-        <input ng-model="round.hole2.shots" ng-bind="round.hole2.shots"/>
-        <input ng-model="round.hole3.shots" ng-bind="round.hole3.shots"/>
-        <input ng-model="round.hole4.shots" ng-bind="round.hole4.shots"/>
-        <input ng-model="round.hole5.shots" ng-bind="round.hole5.shots"/>
-        <input ng-model="round.hole6.shots" ng-bind="round.hole6.shots"/>
-        <input ng-model="round.hole7.shots" ng-bind="round.hole7.shots"/>
-        <input ng-model="round.hole8.shots" ng-bind="round.hole8.shots"/>
-        <input ng-model="round.hole9.shots" ng-bind="round.hole9.shots"/>
-        <input ng-model="round.hole10.shots" ng-bind="round.hole10.shots"/>
-        <input ng-model="round.hole11.shots" ng-bind="round.hole11.shots"/>
-        <input ng-model="round.hole12.shots" ng-bind="round.hole12.shots"/>
-	    <input ng-model="round.hole13.shots" ng-bind="round.hole13.shots"/>    
-    	<input ng-model="round.hole14.shots" ng-bind="round.hole14.shots"/>
-        <input ng-model="round.hole15.shots" ng-bind="round.hole15.shots"/>
-        <input ng-model="round.hole16.shots" ng-bind="round.hole16.shots"/>
-        <input ng-model="round.hole17.shots" ng-bind="round.hole17.shots"/>
-        <input ng-model="round.hole18.shots" ng-bind="round.hole18.shots"/>
+    <input ng-model="round.hole[1].shots" ng-bind="round.hole[1].shots" ng-selected="setHole(1)"/>
+        <input ng-model="round.hole[2].shots" ng-bind="round.hole[2].shots" ng-selected="setHole(2)" />
+        <input ng-model="round.hole[3].shots" ng-bind="round.hole[3].shots" ng-selected="setHole(3)" />
+        <input ng-model="round.hole[4].shots" ng-bind="round.hole[4].shots" ng-selected="setHole(4)" />
+        <input ng-model="round.hole[5].shots" ng-bind="round.hole[5].shots" ng-selected="setHole(5)" />
+        <input ng-model="round.hole[6].shots" ng-bind="round.hole[6].shots" ng-selected="setHole(6)" />
+        <input ng-model="round.hole[7].shots" ng-bind="round.hole[7].shots" ng-selected="setHole(7)" />
+        <input ng-model="round.hole[8].shots" ng-bind="round.hole[8].shots" ng-selected="setHole(8)" />
+        <input ng-model="round.hole[9].shots" ng-bind="round.hole[9].shots" ng-selected="setHole(9)" />
+        <input ng-model="round.hole[10].shots" ng-bind="round.hole[10].shots" ng-selected="setHole(10)" />
+        <input ng-model="round.hole[11].shots" ng-bind="round.hole[11].shots" ng-selected="setHole(11)" />
+        <input ng-model="round.hole[12].shots" ng-bind="round.hole[12].shots" ng-selected="setHole(12)" />
+	    <input ng-model="round.hole[13].shots" ng-bind="round.hole[13].shots" ng-selected="setHole(13)" />    
+    	<input ng-model="round.hole[14].shots" ng-bind="round.hole[14].shots" ng-selected="setHole(14)" />
+        <input ng-model="round.hole[15].shots" ng-bind="round.hole[15].shots" ng-selected="setHole(15)" />
+        <input ng-model="round.hole[16].shots" ng-bind="round.hole[16].shots" ng-selected="setHole(16)" />
+        <input ng-model="round.hole[17].shots" ng-bind="round.hole[17].shots" ng-selected="setHole(17)" />
+        <input ng-model="round.hole[18].shots" ng-bind="round.hole[18].shots" ng-selected="setHole(18)" />
     <button ng-disable="hole == 18" ng-click="nextHole(round)">next hole</button>
     <button type="submit" ng-enable="hole == 18" ng-click="finish()">finish round</button>
   </form>  

@@ -2,17 +2,22 @@ golf.service('configService', ['golfLocalStorage',function(golfLocalStorage) {
   
   var id = "config";
   var config = {};
+  
+  var currentUser = undefined;
 
   return {
     login : function(user ,pwd) {      
-      var user = { name:"ian" ,hadicap:"15", course:"alsager"};
-      config.user = user;
+      currentUser = { name:"ian" ,hadicap:"15", course:"alsager"};
+      config = {'user':currentUser};
       golfLocalStorage.put(id,config);                  
-      return user;
+      return currentUser;
     },
      getUser : function() {
       var config = golfLocalStorage.get(id);
-       return config.user;
+       if (config != undefined) {
+       	return config.user;
+       }
+       return undefined;
 	},
     logout : function(){
       golfLocalStorage.put(id,{});

@@ -6,6 +6,19 @@
       <title>Golf comp scoring system</title>
 		<!--<link rel="stylesheet" href="bower_components/todomvc-common/base.css">-->
 		<style>[ng-cloak] { display: none; }</style>
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-route/angular-route.min.js"></script>
+		<script src="js/app.js"></script>
+        <script src="js/factories/golfLocalStorage.js"></script>
+		<script src="js/controllers/mainCtrl.js"></script>
+      	<script src="js/services/configService.js"></script>
+		<script src="js/controllers/scoreCardCtrl.js"></script>
+        <script src="js/services/scoreCardService.js"></script>
+      	<script src="js/controllers/registerCtrl.js"></script>      	
+      	<script src="js/controllers/historyCtrl.js"></script>
+      	<script src="js/services/registerService.js"></script>
+      	<script src="js/directives/todoFocus.js"></script>
+		<script src="js/directives/todoEscape.js"></script>
 	</head>
 	<body>
 		<section id="golfApp" ng-controller="mainCtrl">
@@ -34,18 +47,6 @@
               	
           	</footer>
 		</section>
-		<script src="bower_components/angular/angular.js"></script>
-      <script src="bower_components/angular-route/angular-route.js"></script>
-		<script src="js/app.js"></script>
-        <script src="js/factories/golfLocalStorage.js"></script>
-		<script src="js/controllers/mainCtrl.js"></script>
-      	<script src="js/services/configService.js"></script>
-		<script src="js/controllers/scoreCardCtrl.js"></script>
-        <script src="js/services/scoreCardService.js"></script>
-      	<script src="js/controllers/registerCtrl.js"></script>      	
-      	<script src="js/controllers/historyCtrl.js"></script>
-      	<script src="js/services/registerService.js"></script>
-      	<script src="js/directives/todoFocus.js"></script>
-		<script src="js/directives/todoEscape.js"></script>
+		
 	</body>
 </html>

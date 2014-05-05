@@ -18,28 +18,28 @@ golf.service('scoreCardService', ['golfLocalStorage',function(golfLocalStorage) 
          calculateFrontNine =function(round,user){
            
 			return (
-         			round.hole1.shots.split(",").length
-                    + round.hole2.shots.split(",").length
-                    + round.hole3.shots.split(",").length
-                    + round.hole4.shots.split(",").length
-                    + round.hole5.shots.split(",").length
-                    + round.hole6.shots.split(",").length
-                    + round.hole7.shots.split(",").length
-                    + round.hole8.shots.split(",").length
-                    + round.hole9.shots.split(",").length);
+         			round.hole[1].shots.split(",").length
+                    + round.hole[2].shots.split(",").length
+                    + round.hole[3].shots.split(",").length
+                    + round.hole[4].shots.split(",").length
+                    + round.hole[5].shots.split(",").length
+                    + round.hole[6].shots.split(",").length
+                    + round.hole[7].shots.split(",").length
+                    + round.hole[8].shots.split(",").length
+                    + round.hole[9].shots.split(",").length);
          }
   
   		calculateBackNine = function(round,user){
 			return (
-         			round.hole10.shots.split(",").length
-                    + round.hole11.shots.split(",").length
-                    + round.hole12.shots.split(",").length
-                    + round.hole13.shots.split(",").length
-                    + round.hole14.shots.split(",").length
-                    + round.hole15.shots.split(",").length
-                    + round.hole16.shots.split(",").length
-                    + round.hole17.shots.split(",").length
-                    + round.hole18.shots.split(",").length);
+         			round.hole[10].shots.split(",").length
+                    + round.hole[11].shots.split(",").length
+                    + round.hole[12].shots.split(",").length
+                    + round.hole[13].shots.split(",").length
+                    + round.hole[14].shots.split(",").length
+                    + round.hole[15].shots.split(",").length
+                    + round.hole[16].shots.split(",").length
+                    + round.hole[17].shots.split(",").length
+                    + round.hole[18].shots.split(",").length);
          }
          
          calculateScore = function(round,user){
@@ -63,30 +63,29 @@ golf.service('scoreCardService', ['golfLocalStorage',function(golfLocalStorage) 
           	golfLocalStorage.put(id,round);
     		return currentHole++;
          },
-    	 addShot : function(shot,hole){
-         	console.log(shot +" " +hole );
+   		 setHole : function(hole){
+    		currentHole = hole;
+           return currentHole;
          },
+    	 addShot : function(round,currentShot,currentHole){
+           	//console.log(round.get('hole'+hole));
+           console.log(round);
+           if(round.hole[currentHole] == undefined){
+             round.hole[currentHole] = {'shots':currentShot};	
+           }
+           else{
+             var _shots = round.hole[currentHole].shots +","+currentShot;
+           	round.hole[currentHole].shots = _shots;
+           }
+           return round;
+         },
+    	getCurrentHole : function(){
+  			return currentHole;
+  		},
     	 getCurrentRound : function(){
            round = golfLocalStorage.get(id);
-           if(round=== undefined){
-          	/*round.hole1= [];
-             round.hole2= [];
-            round.hole3= [];
-             round.hole4= [];
-             round.hole5= [];
-             round.hole6= [];
-             round.hole7= [];
-             round.hole8= [];
-             round.hole9= [];
-             round.hole10= [];
-             round.hole11= [];
-             round.hole12= [];
-             round.hole13= [];
-             round.hole14= [];
-             round.hole15= [];
-             round.hole16= [];
-             round.hole17= [];
-             round.hole18= [];*/
+           if(round === undefined){
+             round = { hole: [] };
            }
   			return round;
          }
